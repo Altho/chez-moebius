@@ -1,0 +1,28 @@
+{
+  "name": "chez-moebius",
+  "version": "0.1.0",
+  "description": "Submission for the OPP restaurant's project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Altho/chez-moebius.git"
+  },
+  "author": "Alan Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Altho/chez-moebius/issues"
+  },
+  "homepage": "https://github.com/Altho/chez-moebius#readme",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
