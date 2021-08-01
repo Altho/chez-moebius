@@ -5,6 +5,7 @@ module.exports= {
     mode: 'development',
     entry: {
         index: './src/main.js',
+        elements: './src/elements.js'
     },
     devtool: 'inline-source-map',
     plugins: [
@@ -18,10 +19,10 @@ module.exports= {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
+            // {
+            //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            //     type: 'asset/resource',
+            // },
         ],
     },
 
