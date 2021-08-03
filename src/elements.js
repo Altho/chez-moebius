@@ -1,6 +1,14 @@
 import restaurant from './restaurant.jpeg';
 
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
 
+const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+
+console.log(images);
 
 const genFunctions = (() => {
     const welcome = (title, image, content) => {
@@ -47,7 +55,7 @@ const genFunctions = (() => {
             console.log(items[i]);
             listElement.innerHTML = items[i];
             menuList.appendChild(listElement);
-            menuList.addEventListener('click', genFunctions.removeContainer);
+            menuList.addEventListener('click', genFunctions.menuGen);
 
         }
         navBar.appendChild(menuList);
@@ -62,12 +70,26 @@ const genFunctions = (() => {
 
     };
 
+    function menuGen(menu){
+        const container = document.querySelector('#container');
+        for (let item of menu){
+            const card = document.createElement('div');
+            card.classList.add('.card');
+            const cardtitle = document.createElement('div');
+            cardtitle.classList.add('card-title')
+            cardtitle.innerHTML=item.title;
+            const cardImg = document.createElement('img');
+            cardImg.src= images[‘item.img’];
+            console.log(cardImg.src);
+        }
+    }
+
     function removeContainer() {
         const container = document.querySelector('#container');
         document.body.removeChild(container);
     }
 
-    return {welcome, containerGen,removeContainer,navBarGen,headerGen};
+    return {welcome, containerGen,removeContainer,navBarGen,headerGen, menuGen};
 
 })();
 
