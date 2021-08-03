@@ -181,29 +181,76 @@ img {
 
 
 
-.glitch {
-    color: #fff;
+
+
+.card {
+    width:15rem;
+
+    margin: 15px;
+    flex: auto;
+    border-radius: 50px;
+
+    background: #e0e0e0;
+    box-shadow:  15px 15px 30px #c5c5c5,
+    -15px -15px 30px #fbfbfb;
+    padding: 20px;
+}
+
+.card-title {
+    font-family: wearealien;
+    margin-top:5px;
+    border-bottom : 1px black solid;
+    margin-bottom : 10px;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 25px;
+}
+
+.card-price {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-family: wearealien;
     font-size: 2em;
-    letter-spacing: 8px;
-    font-weight: 400;
-    /*Create overlap*/
+    background-color: antiquewhite;
+    padding:5px 5px 5px 20px;
 
-    margin: 0;
-    line-height: 0;
-    /*Animation*/
-
-    animation: glitch1 2.5s infinite;
+    border-radius: 25px;
+    margin-bottom: 15px;
 }
 
-.glitch:nth-child(2) {
-    color: #67f3da;
-    animation: glitch2 2.5s infinite;
+.card-content {
+
+    overflow:scroll;
+    overflow-x:hidden;
+    height : 150px;
+    font-family: Sarpanch;
+    padding: 15px;
+    letter-spacing: 3px;
+    line-height: 25px;
+
 }
 
-.glitch:nth-child(3) {
-    color: #f16f6f;
-    animation: glitch3 2.5s infinite;
+
+
+/*.card-price img {*/
+/*    margin-left: 20px;*/
+/*}*/
+
+.img-div img {
+    border-radius: 50px;
 }
+
+
+#menu-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+
+
 /*Keyframes*/
 
 @keyframes glitch1 {
