@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Sarpanch';
+    src: url('./Sarpanch-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: auto;
+}
+
+@font-face {
+    font-family: 'Rudelskopf';
+    src: url('./Rudelskopf Deutsch.woff2') format('woff2');
+    font-weight: 400;
+    font-style: auto;
+}
+@font-face {
+    font-family: 'wearealien';
+    src: url('./wearealien.woff2') format('woff2');
+    font-weight: 400;
+    font-style: auto;
+}
+@font-face {
+    font-family: 'P Funked';
+    src: url('./PFunked.woff2') format('woff2'),
+    url('./PFunked.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,6 +53,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    background: #e0e0e0;
 }
 ol, ul {
     list-style: none;
@@ -49,30 +78,296 @@ table {
     top:0;
     left:0;
     width:100%;
-    background-color: red;
+    background: #e0e0e0;
     position: static;
     height:50px;
+
+
+}
+
+#header h1 {
+    margin-top: 20px;
+    font-size: 3em;
+text-align: center;
+    font-family: 'wearealien';
+
+}
+
+#container h1 {
+    font-family: Rudelskopf;
+    font-size: 3em;
+    text-align: center;
+    border-bottom: 1px black solid;
+border-radius: 25px;
 }
 
 nav {
     width:100%;
     position: relative;
-    background-color: blue;
-    height:30px;
+    background: #e0e0e0;
+    padding: 20px 0 30px 0;
     display: flex;
-    justify-content: flex-end;
-
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 24px 23px -12px rgba(0,0,0,0.20);
+    box-shadow: 0px 24px 23px -12px rgba(0,0,0,0.20);
     align-items: center;
 
 
 }
 
 nav li{
+    font-family: 'wearealien';
+    font-size: 1em;
     margin-left : 50px;
+    padding: 10px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  10px 10px 20px #bebebe,
+    -10px -10px 20px #ffffff;
+}
+
+nav li:hover {
+    border-radius: 46px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  10px 10px 20px #d7d7d7,
+    -10px -10px 20px #e9e9e9;
 }
 
 nav ul{
+    font-family: 'Sarpanch';
+
     list-style: none;
     display: flex;
     padding-right: 50px;
 }
+
+.img-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+#container {
+
+    margin:40px 150px 40px 150px;
+
+    padding: 30px;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 11px 11px 22px #bebebe,
+    inset -11px -11px 22px #ffffff;
+}
+
+img {
+    border-radius: 25px;
+
+}
+
+.content{
+    font-family: Sarpanch;
+    padding:25px 70px 25px 70px;
+    letter-spacing: 3px;
+    line-height: 25px;
+}
+
+#signature {
+    font-family: Rudelskopf;
+    font-size: 5em;
+    text-align: right;
+}
+
+
+
+.glitch {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 8px;
+    font-weight: 400;
+    /*Create overlap*/
+
+    margin: 0;
+    line-height: 0;
+    /*Animation*/
+
+    animation: glitch1 2.5s infinite;
+}
+
+.glitch:nth-child(2) {
+    color: #67f3da;
+    animation: glitch2 2.5s infinite;
+}
+
+.glitch:nth-child(3) {
+    color: #f16f6f;
+    animation: glitch3 2.5s infinite;
+}
+/*Keyframes*/
+
+@keyframes glitch1 {
+    0% {
+        transform: none;
+        opacity: 1;
+    }
+    7% {
+        transform: skew(-0.5deg, -0.9deg);
+        opacity: 0.75;
+    }
+    10% {
+        transform: none;
+        opacity: 1;
+    }
+    27% {
+        transform: none;
+        opacity: 1;
+    }
+    30% {
+        transform: skew(0.8deg, -0.1deg);
+        opacity: 0.75;
+    }
+    35% {
+        transform: none;
+        opacity: 1;
+    }
+    52% {
+        transform: none;
+        opacity: 1;
+    }
+    55% {
+        transform: skew(-1deg, 0.2deg);
+        opacity: 0.75;
+    }
+    50% {
+        transform: none;
+        opacity: 1;
+    }
+    72% {
+        transform: none;
+        opacity: 1;
+    }
+    75% {
+        transform: skew(0.4deg, 1deg);
+        opacity: 0.75;
+    }
+    80% {
+        transform: none;
+        opacity: 1;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes glitch2 {
+    0% {
+        transform: none;
+        opacity: 0.25;
+    }
+    7% {
+        transform: translate(-2px, -3px);
+        opacity: 0.5;
+    }
+    10% {
+        transform: none;
+        opacity: 0.25;
+    }
+    27% {
+        transform: none;
+        opacity: 0.25;
+    }
+    30% {
+        transform: translate(-5px, -2px);
+        opacity: 0.5;
+    }
+    35% {
+        transform: none;
+        opacity: 0.25;
+    }
+    52% {
+        transform: none;
+        opacity: 0.25;
+    }
+    55% {
+        transform: translate(-5px, -1px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: none;
+        opacity: 0.25;
+    }
+    72% {
+        transform: none;
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(-2px, -6px);
+        opacity: 0.5;
+    }
+    80% {
+        transform: none;
+        opacity: 0.25;
+    }
+    100% {
+        transform: none;
+        opacity: 0.25;
+    }
+}
+
+@keyframes glitch3 {
+    0% {
+        transform: none;
+        opacity: 0.25;
+    }
+    7% {
+        transform: translate(2px, 3px);
+        opacity: 0.5;
+    }
+    10% {
+        transform: none;
+        opacity: 0.25;
+    }
+    27% {
+        transform: none;
+        opacity: 0.25;
+    }
+    30% {
+        transform: translate(5px, 2px);
+        opacity: 0.5;
+    }
+    35% {
+        transform: none;
+        opacity: 0.25;
+    }
+    52% {
+        transform: none;
+        opacity: 0.25;
+    }
+    55% {
+        transform: translate(5px, 1px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: none;
+        opacity: 0.25;
+    }
+    72% {
+        transform: none;
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(2px, 6px);
+        opacity: 0.5;
+    }
+    80% {
+        transform: none;
+        opacity: 0.25;
+    }
+    100% {
+        transform: none;
+        opacity: 0.25;
+    }
+}
+
