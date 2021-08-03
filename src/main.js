@@ -69,6 +69,8 @@ const menuContent = [{
 document.body.appendChild(genFunctions.headerGen("Chez Moebius"));
 document.body.appendChild(genFunctions.navBarGen("Our restaurant", "Menu", "Contact us"));
 document.body.appendChild(genFunctions.containerGen());
+genFunctions.welcome(welcomeContent.title,welcomeContent.img,welcomeContent.content);
+
 
 const item1 = document.querySelector('.menu-item'+1);
 const item2 = document.querySelector('.menu-item'+2);

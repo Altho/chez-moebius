@@ -159,6 +159,8 @@ nav ul{
     background: #e0e0e0;
     box-shadow: inset 11px 11px 22px #bebebe,
     inset -11px -11px 22px #ffffff;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 img {
@@ -194,6 +196,7 @@ img {
     box-shadow:  15px 15px 30px #c5c5c5,
     -15px -15px 30px #fbfbfb;
     padding: 20px;
+
 }
 
 .card-title {
@@ -417,4 +420,22 @@ img {
         opacity: 0.25;
     }
 }
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
