@@ -222,23 +222,55 @@ const genFunctions = (() => {
         lNameBundle.appendChild(lastName);
         nameLine.appendChild(lNameBundle);
         formContainer.appendChild(nameLine);
+
         const dimensionLine = document.createElement('div');
         dimensionLine.classList.add('dimension-line');
         const dimension = document.createElement('input');
         dimension.type="text";
-
         dimension.id="dimension"
         const dimBundle =document.createElement('div');
         dimBundle.classList.add('bundle');
         const labelDim = document.createElement("Label");
         labelDim.setAttribute("for",dimension.id);
         labelDim.innerHTML = "Dimension";
-
         dimBundle.appendChild(labelDim);
         dimBundle.appendChild(dimension);
         dimensionLine.appendChild(dimBundle);
+
+        const messageLine = document.createElement('div');
+        messageLine.classList.add('message-line');
+        const message = document.createElement('textarea');
+        message.id="message"
+        const messageBundle =document.createElement('div');
+        messageBundle.classList.add('bundle');
+        const labelMessage = document.createElement("Label");
+        labelMessage.setAttribute("for",message.id);
+        labelMessage.innerHTML = "Your message";
+        messageBundle.appendChild(labelMessage);
+        messageBundle.appendChild(message);
+        messageLine.appendChild(messageBundle);
+
+
         formContainer.appendChild(dimensionLine);
+        formContainer.appendChild(messageLine);
+
+        const send = document.createElement('div')
+        send.innerHTML="SEND !";
+        send.id="send";
+
         container.appendChild(formContainer);
+        container.appendChild(send);
+        let sent = false;
+        send.addEventListener('click', function(){
+            if(sent === false){
+            send.innerHTML="<div class=\"lds-dual-ring\"></div>";
+            setInterval(function(){
+                send.classList.add('sent');
+                send.innerHTML="";
+                sent=true;
+            },5000)
+        }})
+
 
     }
 
