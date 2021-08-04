@@ -6,6 +6,17 @@ const welcomeContent = {
 
 }
 
+const info = {
+    info:"We must infor our customers that Chez Moëbius only accept Standard Tooth Currency. Fake teeth, golden teeth, sweet teeth are not accepted. Teeth need to be clean and cavity-free.",
+    tip : "If you need to change currency, please contact your local Bad Moons Waaaagh"
+
+}
+
+const contact = {
+    info:"if you would like to make a reservation, or have any feedback feel free to contact us. Due to entropy ",
+    tip : "if you are a forgotten god, it might be a while before we can reach out to you."
+}
+
 const menuContent = [{
     title : "Disco Burger",
     img : 'disco.jpeg',
@@ -71,4 +82,4 @@ const menuContent = [{
 
 ]
 
-export {welcomeContent, menuContent};
+export {welcomeContent, menuContent,info,contact};

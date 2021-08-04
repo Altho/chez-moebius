@@ -43,8 +43,45 @@ item2.addEventListener('click',function(){
 
     genFunctions.menuGen(menuContent);
 
+
+
 });;
-item3.addEventListener('click',()=> {console.log('ok')});
+item3.addEventListener('click',function() {
+    const btnArray = document.querySelectorAll('.item');
+
+    genFunctions.removeContainer();
+    document.body.insertBefore(genFunctions.containerGen(),document.body.lastChild);
+    for(let btn of btnArray){
+        btn.classList.remove('pushed');
+    }
+    this.classList.add('pushed');
+    genFunctions.contactGen();
+});
+const headerD = document.querySelector('#header');
+let headerDnew = headerD;
+const nav = document.querySelector('nav');
+let navNew=nav;
+
+window.onscroll = function(e) {
+    // print "false" if direction is down and "true" if up
+    if(scrollY>70){
+        // navNew.classList.remove('unscrolled');
+        // navNew.classList.add('scrolled');
+        navNew.style.marginTop="0";
+        navNew.style.top="0";
+
+    }
+    else if( scrollY<70){
+        headerDnew.style.display="block";
+        // navNew.classList.remove('scrolled');
+        // navNew.classList.add('unscrolled');
+
+        navNew.style.marginTop="50px";
+        navNew.style.top="20px";
+
+    }
+
+}
 
 
 

@@ -1,6 +1,8 @@
 import restaurant from './restaurant.jpeg';
 import tooth from './tooth.svg';
 import git from './git.svg';
+import {info,contact} from './content';
+import infoLogo from './info.svg';
 
 function importAll(r) {
     let images = {};
@@ -16,10 +18,7 @@ const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/
 
 
 const genFunctions = (() => {
-    const navMenuChoice = (choice) => {
-        console.log('ok');
 
-    };
     const welcome = (title, image, content) => {
         // const container = document.querySelector('#container');
         // document.body.removeChild(container);
@@ -66,6 +65,7 @@ const genFunctions = (() => {
         console.log(items);
         const navBar = document.createElement('nav');
         navBar.id = "navbar";
+
         let menuList = document.createElement('ul');
         let concat = 1;
         for (let i = 0; i < items.length; i++) {
@@ -107,14 +107,39 @@ const genFunctions = (() => {
         footer.appendChild(logoA);
         document.body.appendChild(footer);
 
+    };
+    function infoTip(content, tip){
+        const infoDiv = document.createElement('div');
+        infoDiv.classList.add('info');
+        const infoContent = document.createElement('div');
+        infoContent.classList.add('info-content');
+        infoContent.innerHTML=content;
+
+        const tipDiv = document.createElement('div');
+        const tipLogo = new Image();
+        tipLogo.src=infoLogo;
+        tipLogo.classList.add('tip-logo');
+        tipDiv.appendChild(tipLogo);
+        tipDiv.classList.add('tip-div');
+        const tipContent = document.createElement('div');
+        tipContent.classList.add=('tip-content');
+        tipContent.innerHTML=tip;
+        tipDiv.appendChild(tipContent);
+        infoDiv.appendChild(infoContent);
+        infoDiv.appendChild(tipDiv);
+        return infoDiv;
+
     }
 
     function menuGen(menu) {
         const container = document.querySelector('#container');
+        const menuh1 = document.createElement('h1')
+        menuh1.innerHTML="Our delicious food";
+        container.appendChild(menuh1);
         const menuFlex = document.createElement('div');
         menuFlex.id='menu-flex';
+        container.appendChild(genFunctions.infoTip(info.info, info.tip))
         container.appendChild(menuFlex);
-        let imgValue;
         for (let i = 0; i < menu.length; i++) {
 
             const card = document.createElement('div');
@@ -162,9 +187,64 @@ const genFunctions = (() => {
 
     }
 
+    function contactGen(){
+        const container = document.querySelector('#container');
+        const menuh1 = document.createElement('h1')
+        menuh1.innerHTML="Contact us.";
+        container.appendChild(menuh1);
+        container.appendChild(genFunctions.infoTip(contact.info, contact.tip));
+        const formContainer = document.createElement('div');
+        formContainer.id="form-container";
+        const nameLine = document.createElement('div');
+        nameLine.classList.add('name-line');
+        const fNameBundle =document.createElement('div');
+        fNameBundle.classList.add('bundle');
+        const lNameBundle =document.createElement('div');
+        lNameBundle.classList.add('bundle');
+
+        const firstName = document.createElement('input');
+        firstName.type="text";
+        firstName.id="first-name";
+        const lastName = document.createElement('input');
+        lastName.type="text";
+        lastName.id="last-name";
+        const labelFname = document.createElement("Label");
+        labelFname.setAttribute("for",firstName.id);
+        labelFname.innerHTML = "First Name";
+        const labelLname = document.createElement("Label");
+        labelLname.setAttribute("for",lastName.id);
+        labelLname.innerHTML = "Last Name";
+
+        fNameBundle.appendChild(labelFname);
+        fNameBundle.appendChild(firstName);
+        nameLine.appendChild(fNameBundle);
+        lNameBundle.appendChild(labelLname);
+        lNameBundle.appendChild(lastName);
+        nameLine.appendChild(lNameBundle);
+        formContainer.appendChild(nameLine);
+        const dimensionLine = document.createElement('div');
+        dimensionLine.classList.add('dimension-line');
+        const dimension = document.createElement('input');
+        dimension.type="text";
+
+        dimension.id="dimension"
+        const dimBundle =document.createElement('div');
+        dimBundle.classList.add('bundle');
+        const labelDim = document.createElement("Label");
+        labelDim.setAttribute("for",dimension.id);
+        labelDim.innerHTML = "Dimension";
+
+        dimBundle.appendChild(labelDim);
+        dimBundle.appendChild(dimension);
+        dimensionLine.appendChild(dimBundle);
+        formContainer.appendChild(dimensionLine);
+        container.appendChild(formContainer);
+
+    }
 
 
-    return {welcome, containerGen, removeContainer, navBarGen, headerGen, menuGen, navMenuChoice,footerGen};
+
+    return {welcome, containerGen, removeContainer, navBarGen, headerGen, menuGen, footerGen,infoTip,contactGen};
 
 })();
 
