@@ -75,12 +75,13 @@ table {
 
 
 #header{
+    z-index: 5;
     top:0;
     left:0;
     width:100%;
     background: #e0e0e0;
-    position: static;
-    height:50px;
+    position: fixed;
+    height:70px;
 
 
 }
@@ -102,8 +103,11 @@ border-radius: 25px;
 }
 
 nav {
+    top:20px;
+    margin-top: 50px;
+    z-index: 6;
     width:100%;
-    position: relative;
+    position: fixed;
     background: #e0e0e0;
     padding: 20px 0 30px 0;
     display: flex;
@@ -127,12 +131,7 @@ nav li{
     -10px -10px 20px #ffffff;
 }
 
-nav li:hover {
-    border-radius: 46px;
-    background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow:  10px 10px 20px #d7d7d7,
-    -10px -10px 20px #e9e9e9;
-}
+
 
 nav ul{
     font-family: 'Sarpanch';
@@ -150,9 +149,16 @@ nav ul{
 
 }
 
+.pushed {
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 5px 5px 10px #c5c5c5,
+    inset -5px -5px 10px #fbfbfb;
+}
+
 #container {
 
-    margin:40px 150px 40px 150px;
+    margin:200px 150px 40px 150px;
 
     padding: 30px;
     border-radius: 50px;
@@ -209,8 +215,28 @@ img {
     border-radius: 25px;
 }
 
+#footer {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 150px 5px 150px;
+    background: #e0e0e0;
+    box-shadow:  10px -10px 20px #bebebe,
+    -10px -10px 20px #ffffff;
+    font-family: Sarpanch;
+    letter-spacing: 10px;
+    line-height: 25px;
+
+
+}
+
+.credit {
+    border-left: 1px solid black;
+    padding-left: 15px;
+}
+
 .card-price {
-    width: 50%;
     display: flex;
     justify-content: space-between;
     font-family: wearealien;

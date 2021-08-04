@@ -1,5 +1,6 @@
 import restaurant from './restaurant.jpeg';
 import tooth from './tooth.svg';
+import git from './git.svg';
 
 function importAll(r) {
     let images = {};
@@ -90,6 +91,23 @@ const genFunctions = (() => {
 
 
     };
+    function footerGen(credit,link){
+        const footer = document.createElement('div');
+        footer.id='footer';
+        const creditLine = document.createElement('div');
+        creditLine.classList.add('credit');
+        creditLine.innerHTML=credit;
+        footer.appendChild(creditLine);
+        const logoA = document.createElement('a');
+        logoA.href=link;
+        const gitLogo = new Image();
+        gitLogo.classList.add('git-logo');
+        gitLogo.src=git;
+        logoA.appendChild(gitLogo);
+        footer.appendChild(logoA);
+        document.body.appendChild(footer);
+
+    }
 
     function menuGen(menu) {
         const container = document.querySelector('#container');
@@ -146,7 +164,7 @@ const genFunctions = (() => {
 
 
 
-    return {welcome, containerGen, removeContainer, navBarGen, headerGen, menuGen, navMenuChoice};
+    return {welcome, containerGen, removeContainer, navBarGen, headerGen, menuGen, navMenuChoice,footerGen};
 
 })();
 
