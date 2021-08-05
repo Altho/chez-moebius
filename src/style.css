@@ -106,6 +106,13 @@ text-align: center;
     width:25px;
 }
 
+.content{
+    font-family: Sarpanch;
+    padding:25px 70px 25px 70px;
+    letter-spacing: 3px;
+    line-height: 25px;
+}
+
 #container h1 {
     font-family: Rudelskopf;
     font-size: 3em;
@@ -178,6 +185,7 @@ text-align: center;
 
 
 input[type=text] {
+    flex-grow: 1;
     border-radius: 50px;
     height: 40px;
     background: #e0e0e0;
@@ -185,7 +193,6 @@ input[type=text] {
     inset -6px -6px 8px #ffffff;
     font-family: wearealien;
     text-align: center;
-    font-size: 1em;
     color: grey;
     padding: 5px;
     letter-spacing: 3px;
@@ -199,8 +206,9 @@ input[type=text] {
     text-align: center;
     letter-spacing: 15px;
     font-family: Sarpanch;
-    margin:30px;
-height:100px;
+    margin-top:30px;
+height:auto;
+    padding: 10px;
     border-radius: 50px;
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow:  6px 6px 12px #9b9b9b,
@@ -218,12 +226,12 @@ height:100px;
 
 textarea {
     height:200px ;
+    flex-grow: 1;
     border-radius: 50px;
     background: #e0e0e0;
     box-shadow: inset 6px 6px 8px #bcbcbc,
     inset -6px -6px 8px #ffffff;
     font-family: wearealien;
-    font-size: 2em;
     color: grey;
     padding: 25px;
     letter-spacing: 3px;
@@ -343,67 +351,14 @@ nav ul{
     animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-@media (max-width: 1200px) {
-    #container{
-        margin:200px 20px 20px 20px;
 
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    nav {
-        ;
-        bottom: 0;
-        z-index: 6;
-        width:100%;
-        height: 50px;
-        position: fixed;
-        background: #e0e0e0;
-        padding: 20px 0 30px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        align-items: center;
-
-
-    }
-
-
-    nav li{
-        font-family: 'wearealien';
-        cursor: pointer;
-
-        font-size: 1em;
-        margin-left : 50px;
-        padding: 10px;
-        border-radius: 0px;
-        background: none;
-        box-shadow:  none;
-
-
-    }
-    .pushed {
-        border-radius: 0px;
-        background: #e0e0e0;
-        box-shadow: none;
-    }
-}
 
 img {
     border-radius: 25px;
 
 }
 
-.content{
-    font-family: Sarpanch;
-    padding:25px 70px 25px 70px;
-    letter-spacing: 3px;
-    line-height: 25px;
-}
+
 
 #signature {
     font-family: Rudelskopf;
@@ -441,6 +396,7 @@ img {
 
 .sent{
     background-color: palegreen !important;
+    height: 100px !important;
     background-image: url("check.svg") !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -500,6 +456,8 @@ img {
 /*}*/
 
 .img-div img {
+    max-width: 100%;
+    height: auto;
     border-radius: 50px;
 }
 
@@ -525,6 +483,82 @@ img {
     border: 6px solid #fff;
     border-color: #fff transparent #fff transparent;
     animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@media (max-width: 1200px) {
+    #container{
+        margin:200px 20px 20px 20px;
+
+    }
+
+    #footer {
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px 5px 20px;
+        background: #e0e0e0;
+        box-shadow:  10px -10px 20px #bebebe,
+        -10px -10px 20px #ffffff;
+        font-family: Sarpanch;
+        letter-spacing: 10px;
+        line-height: 25px;
+
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    nav {
+    ;
+        bottom: 0;
+        z-index: 6;
+        height: 50px;
+        position: fixed;
+        background: #e0e0e0;
+        padding: 20px 0 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        align-items: center;
+
+
+    }
+
+    .content{
+        padding: 0px;
+        letter-spacing: 2px;
+        line-height: 20px;
+    }
+
+    #signature{
+        font-size: 2em;
+    }
+
+
+    nav li{
+        font-family: 'wearealien';
+        cursor: pointer;
+        flex-grow: 1;
+
+        font-size: 1em;
+        margin-left : 0px;
+        padding: 10px;
+        border-radius: 0px;
+        background: none;
+        box-shadow:  none;
+
+
+    }
+    .pushed {
+        border-radius: 0px;
+        background: #e0e0e0;
+        box-shadow: none;
+    }
 }
 
 @keyframes lds-dual-ring {
@@ -559,8 +593,4 @@ img {
         opacity: 1;
     }
 }
-
-
-
-
 

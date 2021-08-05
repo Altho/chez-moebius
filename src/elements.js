@@ -255,7 +255,7 @@ const genFunctions = (() => {
         formContainer.appendChild(messageLine);
 
         const send = document.createElement('div')
-        send.innerHTML="SEND !";
+        send.innerHTML="SEND";
         send.id="send";
 
         container.appendChild(formContainer);
