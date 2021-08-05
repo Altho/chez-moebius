@@ -83,3 +83,4 @@ const menuContent = [{
 ]
 
 export {welcomeContent, menuContent,info,contact};
+
